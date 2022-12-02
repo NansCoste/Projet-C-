@@ -9,10 +9,11 @@ link_directories(/usr/local/lib)
 find_package(Boost COMPONENTS system filesystem REQUIRED)
 
 # C++ library
-add_library (Projet-C- SHARED Personnage.cpp)
+add_library (Perso SHARED Personnage.cpp)
 
 # Construction of the programs
 add_executable (main main.cpp)
+target_link_libraries (main Perso)
 
 # Unitary Test
 ##enable_testing()
