@@ -11,6 +11,7 @@ void Personnage::AfficheStat ()
 	std::cout << "Intelligence : " << Personnage::Intelligence << std::endl;
 	std::cout << "Perception : " << Personnage::Perception << std::endl;
 	std::cout << "Charisme : " << Personnage::Charisme << std::endl;
+	std::cout << "" << std::endl;
 }
 
 

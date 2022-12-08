@@ -12,7 +12,7 @@ class Personnage
 	int Intelligence;
 	int Perception;
 	int Charisme;
-
+	
 	void AfficheStat();
 };
 
