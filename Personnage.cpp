@@ -8,6 +8,7 @@ void Personnage::AfficheStat ()
 	std::cout << "Vie : " << Personnage::Vie << std::endl;
 	std::cout << "Attaque : " << Personnage::Attaque << std::endl;
 	std::cout << "Defence : " << Personnage::Defence << std::endl;
+	std::cout << "" << std::endl;
 }
 
 

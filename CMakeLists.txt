@@ -10,10 +10,12 @@ find_package(Boost COMPONENTS system filesystem REQUIRED)
 
 # C++ library
 add_library (Perso SHARED Personnage.cpp)
+add_library (Mage SHARED Magicien.cpp)
 
 # Construction of the programs
 add_executable (main main.cpp)
 target_link_libraries (main Perso)
+target_link_libraries (main Mage)
 
 # Unitary Test
 ##enable_testing()
