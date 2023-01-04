@@ -9,7 +9,7 @@ class Personnage
 	int Vie;
 	int Attaque;
 	int Defence;
-	
+
 	void AfficheStat();
 };
 
