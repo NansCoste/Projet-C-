@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include <Personnage.hpp>
 #include <Magicien.hpp>
+#include <Combattant.hpp>
 
 int main ()
 {
@@ -37,4 +38,25 @@ int main ()
 	S1.Livre = 2;
 	S1.AfficheStat();
 	S1.AfficheDeg();
+
+	Guerrier G1;
+	G1.Nom = "Grumph";
+	G1.Classe = "Guerrier";
+	G1.Vie = 30;
+	G1.Attaque = 12;
+	G1.Defence = 6;
+	G1.ArmeD = 4;
+	G1.AfficheStat();
+	G1.AfficheDeg();
+
+	Paladin G2;
+        G2.Nom = "Grumph";
+        G2.Classe = "Paladin";
+        G2.Vie = 30;
+        G2.Attaque = 10;
+        G2.Defence = 8;
+        G2.Arme = 2;
+        G2.AfficheStat();
+        G2.AfficheDeg();
+
 }
