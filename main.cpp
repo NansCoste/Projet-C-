@@ -18,9 +18,9 @@ int main ()
 	Elementaire P2;
 	P2.Nom = "Alex";
         P2.Classe = "Magicien elementaire";
-	P1.Vie = 12;
-	P1.Attaque = 8;
-	P1.Defence = 2;
+	P2.Vie = 12;
+	P2.Attaque = 8;
+	P2.Defence = 2;
 	P2.Mana = 10;
 	P2.Baton = 2;
 	P2.Focus = 1;
