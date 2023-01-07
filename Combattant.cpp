@@ -4,11 +4,7 @@
 
 void Guerrier::AfficheStat ()
 {
-        std::cout << "Nom : " << Guerrier::Nom << std::endl;
-        std::cout << "Classe : " << Guerrier::Classe <<std::endl;
-        std::cout << "Vie : " << Personnage::Vie << std::endl;
-        std::cout << "Attaque : " << Personnage::Attaque << std::endl;
-        std::cout << "Defence : " << Personnage::Defence << std::endl;
+	Personnage::AfficheStat();
         std::cout << "Arme a deux mains : +" << Guerrier::ArmeD << std::endl;
         std::cout << "" << std::endl;
 }
@@ -24,11 +20,7 @@ void Guerrier::AfficheDeg()
 
 void Paladin::AfficheStat()
 {
-        std::cout << "Nom : " << Combattant::Nom << std::endl;
-        std::cout << "Classe : " << Combattant::Classe <<std::endl;
-        std::cout << "Vie : " << Personnage::Vie << std::endl;
-        std::cout << "Attaque : " << Personnage::Attaque << std::endl;
-        std::cout << "Defence : " << Personnage::Defence << std::endl;
+	Personnage::AfficheStat();
         std::cout << "Arme : +" << Paladin::Arme << std::endl;
         std::cout << "Bouclier : +" << Paladin::Bouclier << std::endl;
         std::cout << "" << std::endl;
