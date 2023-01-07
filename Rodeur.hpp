@@ -3,12 +3,20 @@
 
 #include <Personnage.hpp>
 
+////////////////////////////////
+// Classe principal du Rodeur //
+// Armure = Armure légère     //
+////////////////////////////////
 class Rodeur: public Personnage
 {
         public:
         int Armure;
 };
 
+//////////////////////////////////
+// Classe spécifique Voleur     //
+// Arme = Dâgue ou armme courte //
+//////////////////////////////////
 class Voleur: public Rodeur
 {
         public:
@@ -19,6 +27,9 @@ class Voleur: public Rodeur
 	int DegRec(int);
 };
 
+//////////////////////////////
+// Classe spécifique Archer //
+//////////////////////////////
 class Archer: public Rodeur
 {
         public:

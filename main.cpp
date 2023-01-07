@@ -8,9 +8,12 @@
 
 int main ()
 {
-	srand(time(NULL));
-	int choix;
+	srand(time(NULL));			// Base aléatoire pour les attaques
+	int choix;				// Choix pour les combats
 
+	//////////////////////////
+	// Création d'un voleur //
+	// ///////////////////////
 	Voleur V1;
 	V1.Nom = "Nigel";
 	V1.Classe = "Voleur";
@@ -20,37 +23,49 @@ int main ()
 	V1.Armure = 2;
 	V1.Arme = 4;
 
+	///////////////////////////////////////
+	//Création d'un Magicien Elémentaire //
+	///////////////////////////////////////
 	Elementaire E1;
 	E1.Nom = "Keiran";
         E1.Classe = "Magicien elementaire";
 	E1.Vie = 20;
-	E1.Attaque = 8;
+	E1.Attaque = 4;
 	E1.Defence = 2;
 	E1.Vetement = 2;
-	E1.Mana = 3;
+	E1.Mana = 6;
 	E1.Baton = 3;
 	E1.Focus = 2;
 
+	///////////////////////////////////
+	// Création d'un Magicien Sombre //
+	///////////////////////////////////
 	Sombre S1;
 	S1.Nom = "Salazar";
 	S1.Classe = "Magicien sombre";
 	S1.Vie = 30;
-	S1.Attaque = 8;
+	S1.Attaque = 4;
 	S1.Defence = 3;
 	S1.Vetement = 2;
-	S1.Mana = 4;
+	S1.Mana = 8;
 	S1.Baguette = 2;
 	S1.Livre = 2;
 
+	////////////////////////////
+	// Création d'un Guerrier //
+	////////////////////////////
 	Guerrier G1;
 	G1.Nom = "Faramir";
 	G1.Classe = "Guerrier";
 	G1.Vie = 40;
-	G1.Attaque = 12;
+	G1.Attaque = 10;
 	G1.Defence = 6;
 	G1.ArmureL = 4;
-	G1.ArmeD = 10;
+	G1.ArmeD = 8;
 
+	///////////////////////////
+	// Création d'un Paladin //
+	///////////////////////////
 	Paladin P1;
         P1.Nom = "Théo";
         P1.Classe = "Paladin";
@@ -58,26 +73,33 @@ int main ()
         P1.Attaque = 10;
         P1.Defence = 8;
 	P1.ArmureL = 6;
-        P1.Arme = 8;
+        P1.Arme = 6;
 	P1.Bouclier = 2;
 	
+	//////////////////////////
+	// Création d'un Archer //
+	//////////////////////////
 	Archer A1;
 	A1.Nom = "Guillamue";
 	A1.Classe = "Archer";
-	A1.Vie = 14;
-	A1.Attaque = 8;
+	A1.Vie = 20;
+	A1.Attaque = 6;
 	A1.Defence = 4;
 	A1.Armure = 2;
-	A1.Arc = 6;
+	A1.Arc = 4;
+
 
 	std::cout << "Choississez votre combat : 1. Voleur vs Guerrier" << std::endl;
 	std::cout << "			   2. Archer vs Magicien elementaire" << std::endl;
 	std::cout << "			   3. Paladin vs Magicin sombre" << std::endl;
 	std::cin >> choix;
 
-	int i = 1;
-	bool combat = true;
+	int i = 1;			// Permet de voir le nombre de tour d'un combat
+	bool combat = true;		// Pour la boucle du combat
 
+	////////////////////////////
+	// Voleur contre Guerrier //
+	////////////////////////////
 	if (choix == 1)
 	{
 		int degV, degrecV, degG, degrecG;
@@ -101,7 +123,7 @@ int main ()
 			std::cout << "Attaque du Geurrier" << std::endl << std::endl;
 			degG = G1.Deg();
 			degrecV = V1.DegRec(degG);
-			V1.Vie -= degrecG;
+			V1.Vie -= degrecV;
 			std::cout << "Vie Voleur : " << V1.Vie << std::endl << std::endl;
 			i++;
 			if (V1.Vie <=0)
@@ -115,6 +137,9 @@ int main ()
 		}while (combat);
 	}
 
+	////////////////////////////////////////
+	// Archer contre Magicien Elémentaire //
+	////////////////////////////////////////
 	else if (choix == 2)
         {
                 int degA, degrecA, degE, degrecE;
@@ -152,6 +177,9 @@ int main ()
                 }while (combat);
         }
 	
+	////////////////////////////////////
+	// Paladin contre Magicien Sombre //
+	////////////////////////////////////
 	else if (choix == 3)
 	{
 		int degP, degrecP, degS, degrecS;

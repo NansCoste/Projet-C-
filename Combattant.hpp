@@ -3,12 +3,20 @@
 
 #include <Personnage.hpp>
 
+////////////////////////////////////
+// Classe principal du combattant //
+// ArmureL = Armure lourde        //
+////////////////////////////////////
 class Combattant: public Personnage
 {
         public:
         int ArmureL;
 };
 
+////////////////////////////////
+// Classe spécifique Guerrier //
+// ArmeD = Arme à deux main   //
+////////////////////////////////
 class Guerrier: public Combattant
 {
         public:
@@ -19,6 +27,10 @@ class Guerrier: public Combattant
 	int DegRec(int);
 };
 
+///////////////////////////////
+// Classe spécifique Paladin //
+// Arme = Arme à une main    //
+///////////////////////////////
 class Paladin: public Combattant
 {
         public:
