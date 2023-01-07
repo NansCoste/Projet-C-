@@ -2,19 +2,23 @@
 #include <cstdlib>
 #include <Personnage.hpp>
 #include <Magicien.hpp>
+#include <Rodeur.hpp>
 #include <Combattant.hpp>
 
 int main ()
 {
 	srand(time(NULL));
 
-	Personnage P1;
+	Voleur P1;
 	P1.Nom = "Nans";
-	P1.Classe = "Rodeur";
+	P1.Classe = "Voleur";
 	P1.Vie = 20;
 	P1.Attaque = 6;
 	P1.Defence = 4;
+	P1.Armure = 2;
+	P1.Arme = 3;
 	P1.AfficheStat();
+	P1.AfficheDeg();
 
 	Elementaire P2;
 	P2.Nom = "Alex";
