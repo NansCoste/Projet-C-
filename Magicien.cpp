@@ -4,7 +4,11 @@
 
 void Elementaire::AfficheStat ()
 {
-	Personnage::AfficheStat();
+	std::cout << "Nom : " << Personnage::Nom << std::endl;
+        std::cout << "Classe : " << Personnage::Classe <<std::endl;
+        std::cout << "Vie : " << Personnage::Vie << std::endl;
+        std::cout << "Attaque : " << Personnage::Attaque << std::endl;
+        std::cout << "Defence : " << Personnage::Defence << std::endl;
 	std::cout << "Mana : " << Elementaire::Mana << std::endl;
 	std::cout << "Baton : +" << Elementaire::Baton << std::endl;
 	std::cout << "Focus : +" << Elementaire::Focus << std::endl;
@@ -22,7 +26,11 @@ void Elementaire::AfficheDeg()
 
 void Sombre::AfficheStat()
 {
-	Personnage::AfficheStat();
+	std::cout << "Nom : " << Personnage::Nom << std::endl;
+        std::cout << "Classe : " << Personnage::Classe <<std::endl;
+        std::cout << "Vie : " << Personnage::Vie << std::endl;
+        std::cout << "Attaque : " << Personnage::Attaque << std::endl;
+        std::cout << "Defence : " << Personnage::Defence << std::endl;
         std::cout << "Mana : " << Sombre::Mana << std::endl;
         std::cout << "Baguette : +" << Sombre::Baguette << std::endl;
         std::cout << "Livre : +" << Sombre::Livre << std::endl;

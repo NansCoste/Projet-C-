@@ -9,8 +9,6 @@ class Personnage
 	int Vie;
 	int Attaque;
 	int Defence;
-
-	void AfficheStat();
 };
 
 #endif //__PERSONNAGE_HPP
