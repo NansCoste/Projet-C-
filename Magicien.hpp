@@ -3,6 +3,9 @@
 
 #include <Personnage.hpp>
 
+//////////////////////////////////
+// Classe principal du Magicien //
+//////////////////////////////////
 class Magicien: public Personnage
 {
 	public:
@@ -10,6 +13,9 @@ class Magicien: public Personnage
 	int Vetement;
 };
 
+////////////////////////////////////////////
+// Classe spécifique Magicien Elémentaire //
+////////////////////////////////////////////
 class Elementaire: public Magicien
 {
 	public:
@@ -17,9 +23,13 @@ class Elementaire: public Magicien
 	int Focus;
 
 	void AfficheStat();
-        void AfficheDeg();
+	int Deg();
+        int DegRec(int);
 };
 
+///////////////////////////////////////
+// Classe spécifique Magicien Sombre //
+///////////////////////////////////////
 class Sombre: public Magicien
 {
 	public:
@@ -27,7 +37,8 @@ class Sombre: public Magicien
 	int Livre;
 
 	void AfficheStat();
-	void AfficheDeg();
+	int Deg();
+        int DegRec(int);
 };
 
 #endif //__MAGICIEN_HPP
