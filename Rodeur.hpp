@@ -15,7 +15,8 @@ class Voleur: public Rodeur
         int Arme;
 
         void AfficheStat();
-        void AfficheDeg();
+        int Deg();
+	int DegRec(int);
 };
 
 class Archer: public Rodeur
@@ -24,7 +25,8 @@ class Archer: public Rodeur
         int Arc;
 
         void AfficheStat();
-        void AfficheDeg();
+        int Deg();
+	int DegRec(int);
 };
 
 #endif //__RODEUR_HPP

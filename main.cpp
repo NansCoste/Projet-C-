@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdlib>
+#include <unistd.h>
 #include <Personnage.hpp>
 #include <Magicien.hpp>
 #include <Rodeur.hpp>
@@ -8,59 +9,188 @@
 int main ()
 {
 	srand(time(NULL));
+	int choix;
 
-	Voleur P1;
-	P1.Nom = "Nans";
-	P1.Classe = "Voleur";
-	P1.Vie = 20;
-	P1.Attaque = 6;
-	P1.Defence = 4;
-	P1.Armure = 2;
-	P1.Arme = 3;
-	P1.AfficheStat();
-	P1.AfficheDeg();
+	Voleur V1;
+	V1.Nom = "Nigel";
+	V1.Classe = "Voleur";
+	V1.Vie = 30;
+	V1.Attaque = 6;
+	V1.Defence = 4;
+	V1.Armure = 2;
+	V1.Arme = 4;
 
-	Elementaire P2;
-	P2.Nom = "Alex";
-        P2.Classe = "Magicien elementaire";
-	P2.Vie = 12;
-	P2.Attaque = 8;
-	P2.Defence = 2;
-	P2.Mana = 10;
-	P2.Baton = 2;
-	P2.Focus = 1;
-	P2.AfficheStat();
-	P2.AfficheDeg();
+	Elementaire E1;
+	E1.Nom = "Keiran";
+        E1.Classe = "Magicien elementaire";
+	E1.Vie = 20;
+	E1.Attaque = 8;
+	E1.Defence = 2;
+	E1.Vetement = 2;
+	E1.Mana = 3;
+	E1.Baton = 3;
+	E1.Focus = 2;
 
 	Sombre S1;
-	S1.Nom = "Ilyes";
+	S1.Nom = "Salazar";
 	S1.Classe = "Magicien sombre";
-	S1.Vie = 12;
+	S1.Vie = 30;
 	S1.Attaque = 8;
 	S1.Defence = 3;
-	S1.Baguette = 3;
+	S1.Vetement = 2;
+	S1.Mana = 4;
+	S1.Baguette = 2;
 	S1.Livre = 2;
-	S1.AfficheStat();
-	S1.AfficheDeg();
 
 	Guerrier G1;
-	G1.Nom = "Grumph";
+	G1.Nom = "Faramir";
 	G1.Classe = "Guerrier";
-	G1.Vie = 30;
+	G1.Vie = 40;
 	G1.Attaque = 12;
 	G1.Defence = 6;
-	G1.ArmeD = 4;
-	G1.AfficheStat();
-	G1.AfficheDeg();
+	G1.ArmureL = 4;
+	G1.ArmeD = 10;
 
-	Paladin G2;
-        G2.Nom = "Grumph";
-        G2.Classe = "Paladin";
-        G2.Vie = 30;
-        G2.Attaque = 10;
-        G2.Defence = 8;
-        G2.Arme = 2;
-        G2.AfficheStat();
-        G2.AfficheDeg();
+	Paladin P1;
+        P1.Nom = "Théo";
+        P1.Classe = "Paladin";
+        P1.Vie = 50;
+        P1.Attaque = 10;
+        P1.Defence = 8;
+	P1.ArmureL = 6;
+        P1.Arme = 8;
+	P1.Bouclier = 2;
+	
+	Archer A1;
+	A1.Nom = "Guillamue";
+	A1.Classe = "Archer";
+	A1.Vie = 14;
+	A1.Attaque = 8;
+	A1.Defence = 4;
+	A1.Armure = 2;
+	A1.Arc = 6;
 
+	std::cout << "Choississez votre combat : 1. Voleur vs Guerrier" << std::endl;
+	std::cout << "			   2. Archer vs Magicien elementaire" << std::endl;
+	std::cout << "			   3. Paladin vs Magicin sombre" << std::endl;
+	std::cin >> choix;
+
+	int i = 1;
+	bool combat = true;
+
+	if (choix == 1)
+	{
+		int degV, degrecV, degG, degrecG;
+		V1.AfficheStat();
+		G1.AfficheStat();
+		do 
+		{
+			std::cout << "Tour " << i << std::endl;
+			std::cout << "Attaque du Voleur" << std::endl << std::endl;
+			degV = V1.Deg();
+			degrecG = V1.DegRec(degV);
+			G1.Vie -= degrecG;
+			std::cout << "Vie Guerrier : " << G1.Vie << std::endl << std::endl;
+			if (G1.Vie <= 0)
+                        {
+                                std::cout << "Le Guerrier est mort" << std::endl;
+                                combat = false;
+				return 0;
+                        }
+			sleep(1);
+			std::cout << "Attaque du Geurrier" << std::endl << std::endl;
+			degG = G1.Deg();
+			degrecV = V1.DegRec(degG);
+			V1.Vie -= degrecG;
+			std::cout << "Vie Voleur : " << V1.Vie << std::endl << std::endl;
+			i++;
+			if (V1.Vie <=0)
+			{
+				std::cout << "Le Voleur est mort" << std::endl;
+                                combat = false;
+				return 0;
+			}
+			std::cout << "" << std::endl;
+			sleep(2);
+		}while (combat);
+	}
+
+	else if (choix == 2)
+        {
+                int degA, degrecA, degE, degrecE;
+                A1.AfficheStat();
+                E1.AfficheStat();
+                do
+                {
+                        std::cout << "Tour " << i << std::endl;
+                        std::cout << "Attaque de l'Archer" << std::endl << std::endl;
+                        degA = A1.Deg();
+                        degrecE = E1.DegRec(degA);
+                        E1.Vie -= degrecE;
+                        std::cout << "Vie Magicien Elementaire : " << E1.Vie << std::endl << std::endl;
+			if (E1.Vie <=0)
+                        {
+                                std::cout << "Le Magicien Elementaire est mort" << std::endl;
+                                combat = false;
+				return 0;
+                        }
+			sleep(1);
+                        std::cout << "Attaque du Magicien Elementaire" << std::endl << std::endl;
+                        degE = E1.Deg();
+                        degrecA = A1.DegRec(degE);
+                        A1.Vie -= degrecA;
+                        std::cout << "Vie Archer : " << A1.Vie << std::endl << std::endl;
+                        i++;
+                        if (A1.Vie <= 0)
+                        {
+                                std::cout << "L'Archer est mort" << std::endl;
+                                combat = false;
+				return 0;
+                        }
+                        std::cout << "" << std::endl;
+                        sleep(2);
+                }while (combat);
+        }
+	
+	else if (choix == 3)
+	{
+		int degP, degrecP, degS, degrecS;
+                P1.AfficheStat();
+                S1.AfficheStat();
+                do
+                {
+                        std::cout << "Tour " << i << std::endl;
+                        std::cout << "Attaque du Magicien Sombre" << std::endl << std::endl;
+                        degS = S1.Deg();
+                        degrecP = P1.DegRec(degS);
+                        P1.Vie -= degrecP;
+                        std::cout << "Vie Paladin : " << P1.Vie << std::endl << std::endl;
+                        if (P1.Vie <=0)
+                        {
+                                std::cout << "Le Paladin est mort" << std::endl;
+                                combat = false;
+                                return 0;
+                        }
+                        sleep(1);
+                        std::cout << "Attaque du Paladin" << std::endl << std::endl;
+                        degP = P1.Deg();
+                        degrecS = S1.DegRec(degP);
+                        S1.Vie -= degrecS;
+                        std::cout << "Vie Magicien Sombre : " << S1.Vie << std::endl << std::endl;
+                        i++;
+                        if (S1.Vie <= 0)
+                        {
+                                std::cout << "Le Magicien Sombre est mort" << std::endl;
+                                combat = false;
+                                return 0;
+                        }
+                        std::cout << "" << std::endl;
+                        sleep(2);
+                }while (combat);
+        }
+
+	else 
+	{
+		std::cout << "Action non permise, relancez le programme" << std::endl;
+	}
 }

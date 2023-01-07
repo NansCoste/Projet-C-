@@ -17,7 +17,8 @@ class Elementaire: public Magicien
 	int Focus;
 
 	void AfficheStat();
-        void AfficheDeg();
+	int Deg();
+        int DegRec(int);
 };
 
 class Sombre: public Magicien
@@ -27,7 +28,8 @@ class Sombre: public Magicien
 	int Livre;
 
 	void AfficheStat();
-	void AfficheDeg();
+	int Deg();
+        int DegRec(int);
 };
 
 #endif //__MAGICIEN_HPP

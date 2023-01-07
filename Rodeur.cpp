@@ -14,13 +14,22 @@ void Voleur::AfficheStat ()
         std::cout << "" << std::endl;
 }
 
-void Voleur::AfficheDeg()
+int Voleur::Deg()
 {
         int deg = (rand() % 20);
         std::cout << "Dégats base : " << deg << std::endl;
-        deg = deg + Voleur::Arme;
-        std::cout << "Degats totaux : " << deg << std::endl;
+        deg = deg + Voleur::Arme + Personnage::Attaque;
+        std::cout << "Dégats totaux : " << deg << std::endl;
         std::cout << "" << std::endl;
+	return deg;
+}
+
+int Voleur::DegRec(int Deg)
+{
+	int degrec = Deg - (Voleur::Defence + Voleur::Armure);
+	std::cout << "Dégats reçus : " << degrec << std::endl;
+	std::cout << "" << std::endl;
+	return degrec;
 }
 
 void Archer::AfficheStat()
@@ -35,11 +44,20 @@ void Archer::AfficheStat()
         std::cout << "" << std::endl;
 }
 
-void Archer::AfficheDeg()
+int Archer::Deg()
 {
         int deg = (rand() % 20);
         std::cout << "Dégats base : " << deg << std::endl;
-        deg = deg + Archer::Arc;
+        deg = deg + Archer::Arc + Personnage::Attaque;
         std::cout << "Degats totaux : " << deg << std::endl;
         std::cout << "" << std::endl;
+	return deg;
+}
+
+int Archer::DegRec(int Deg)
+{
+        int degrec = Deg - (Personnage::Defence + Rodeur::Armure);
+        std::cout << "Dégats reçus : " << degrec << std::endl;
+        std::cout << "" << std::endl;
+        return degrec;
 }

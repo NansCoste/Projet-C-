@@ -15,7 +15,8 @@ class Guerrier: public Combattant
         int ArmeD;
 
         void AfficheStat();
-        void AfficheDeg();
+        int Deg();
+	int DegRec(int);
 };
 
 class Paladin: public Combattant
@@ -24,8 +25,9 @@ class Paladin: public Combattant
         int Arme;
         int Bouclier;
 
-        void AfficheStat();
-        void AfficheDeg();
+	void AfficheStat();
+	int Deg();
+        int DegRec(int);
 };
 
 #endif //__COMBATTANT_HPP
