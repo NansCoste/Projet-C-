@@ -1,11 +1,12 @@
 # Projet-C++
 Projet classe personnage C++
 
-Le but de notre projet est la réalisation d'un jeu de rôle classique entre plusieurs personnages et de pouvoir y effectuer des combats entre eux.
+Le but de notre projet est la réalisation d'un jeu de rôle classique entre plusieurs personnages et de pouvoir effectuer des combats entre eux.
 
 On retrouve ainsi les classes suivant : - Combattant
                                         - Magicien
                                         - Rodeur
+
 Dans chaque classe on retrouve 2 personnages differents : - Guerrier et Paladin pour la classe Combatant
                                                           - Magicien Elementaire et Magicien Sombre pour la classe Magicien
                                                           - Voleur et Archer pour la classe Rodeur
